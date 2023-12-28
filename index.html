@@ -1,0 +1,1707 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Admin Panel</title>
+</head>
+<style>
+    
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Roboto;
+	panose-1:2 0 0 0 0 0 0 0 0 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:.2pt;
+	margin-left:.5pt;
+	text-indent:-.5pt;
+	line-height:112%;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	color:black;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:18.5pt;
+	text-indent:-.5pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:black;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:.15pt;
+	margin-left:18.5pt;
+	text-indent:-.5pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:15.5pt;
+	font-family:"Arial",sans-serif;
+	color:#FF9900;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:15.6pt;
+	margin-left:.5pt;
+	text-indent:-.5pt;
+	line-height:110%;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;
+	color:black;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Arial",sans-serif;
+	color:black;
+	font-weight:bold;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Arial",sans-serif;
+	color:black;
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Arial",sans-serif;
+	color:#FF9900;
+	font-weight:bold;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:73.5pt 72.4pt 73.55pt 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+@page WordSection2
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection2
+	{page:WordSection2;}
+-->
+</style>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <aside id="sidebar">
+            <div class="h-100">
+                <div class="sidebar-logo">
+                    <a href="#">Admin Panel</a>
+                </div>
+                <!-- Sidebar Navigation -->
+
+                
+                <!-- Sidebar Navigation -->
+                <ul class="sidebar-nav">
+                    
+                    
+                    <li class="sidebar-item">
+                        <a href="#DASHBOARD" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#pages"
+                            aria-expanded="false" aria-controls="pages">
+                           
+                            DASHBOARD
+                        </a>
+                        <ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="#Bussiness" class="sidebar-link">Business Analytics</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#Admin" class="sidebar-link">Admin Wallet</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#Earning" class="sidebar-link">Earning statistics for<br> business analytics</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#Top" class="sidebar-link">Top Customers</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#Mostpopularstores" class="sidebar-link">Most popular stores</a>
+                            </li>
+                            
+                            <li class="sidebar-item">
+                                <a href="#Topsellingstore" class="sidebar-link">Top selling store</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#Mostpopularproduct" class="sidebar-link">Most popular product</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#Topsellingproducts" class="sidebar-link">Top selling products</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#pos" class="sidebar-link">POS</a>
+                            </li>
+                        </ul>
+                    </li>
+                   
+
+                    <li class="sidebar-item">
+                        <a href="#ORDERMANAGEMENT" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#multi"
+                            aria-expanded="false" aria-controls="multi">
+                            
+                            ORDER MANAGEMENT
+                        </a>
+                        <ul id="multi" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="#Orders" class="sidebar-link collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#multi-two" aria-expanded="false" aria-controls="multi-two">
+                                   <B> Orders</B>
+                                </a>
+                                <ul id="multi-two" class="sidebar-dropdown list-unstyled collapse">
+                                    <li class="sidebar-item">
+                                        <a href="#All" class="sidebar-link">• All orders</a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#Pending" class="sidebar-link">• Pending</a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#Confirmed" class="sidebar-link">• Confirmed</a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#Packaging" class="sidebar-link">• Packaging</a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#Outofdeliver" class="sidebar-link">• Out of deliver</a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#Delivered" class="sidebar-link">• Delivered</a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#Returned" class="sidebar-link">• Returned</a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#FailedtoDeliver" class="sidebar-link">• Failed to Deliver</a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#Canceled" class="sidebar-link">• Canceled</a>
+                                    </li>
+                                    
+                                </ul>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#Refundrequest" class="sidebar-link">
+                                    
+                                  <b>Refund request</b>  
+                                </a>
+
+                                <ul>
+                                    <li class="sidebar-item">
+                                        <a href="#Pendingreq" class="sidebar-link">
+                                            
+                                            • Pending
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#Approvedreq" class="sidebar-link">
+                                            
+                                            • Approved
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#Refundedreq" class="sidebar-link">
+                                            
+                                            • Refunded
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#Rejectedreq" class="sidebar-link">
+                                            • Rejected
+                                        </a>
+                                    </li>
+                                    
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+
+
+                    <li class="sidebar-item">
+                        <a href="#PRODUCTMANAGEMENT" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard"
+                            aria-expanded="false" aria-controls="dashboard">
+                            
+                            PRODUCT MANAGEMENT
+                        </a>
+                        <ul id="dashboard" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="#Categorysetup" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#auth2"
+                                    aria-expanded="false" aria-controls="auth2">
+                                   
+                                  <b> Category setup</b> 
+                                </a>
+                                <ul id="auth2" class="sidebar-dropdown list-unstyled " data-bs-parent="#sidebar">
+                                    <li class="sidebar-item">
+                                        <a href="#Category" class="sidebar-link">• Category</a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#Subcategory" class="sidebar-link">• Sub category</a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#Subsubcategory" class="sidebar-link">• Sub sub category</a>
+                                    </li>
+                                    
+                                </ul>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#Brands" class="sidebar-link"><b>Brands</b></a>
+                                
+                            </li>
+                            
+                            <li class="sidebar-item">
+                                <a href="#Addnew" class="sidebar-link">• Add new</a>
+                                
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#List" class="sidebar-link">• List</a>
+                                
+                            </li>
+
+  <li class="sidebar-item">
+                                <a href="#ProductAttribute" class="sidebar-link"><b>Product Attribute</b></a>
+                                
+                            </li>
+                            
+                      
+
+                            
+
+                            
+                        </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#PROMOTIONMANAGEMENT" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#auth"
+                            aria-expanded="false" aria-controls="auth">
+                            
+                            PROMOTION MANAGEMENT
+                        </a>
+                        <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="#Banners" class="sidebar-link"><b> • Banners</b></a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#Offers&Deals" class="sidebar-link"><b> • Offers & Deals</b>
+                                     
+                                    </a> 
+                            </li>
+                        </ul>
+                    </li>
+         
+                   
+                    <li class="sidebar-item">
+                        <a href="#HELPSUPPORTSECTION" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard2"
+                            aria-expanded="false" aria-controls="dashboard2">
+                            
+                            HELP & SUPPORT SECTION
+                        </a>
+                        <ul id="dashboard2" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="#Message" class="sidebar-link">Message</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#Supportticket" class="sidebar-link">Support ticket</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a href="#REPORTS&ANALYSIS" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard3"
+                            aria-expanded="false" aria-controls="dashboard3">
+                            
+                            REPORTS & ANALYSIS
+                        </a>
+                        <ul id="dashboard3" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="#Sales&transactionreport" class="sidebar-link">Sales & transaction report</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#Productreport" class="sidebar-link">Product report</a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li class="sidebar-item">
+                        <a href="#USERMANAGEMENT" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard4"
+                            aria-expanded="false" aria-controls="dashboard4">
+                            
+                            USER MANAGEMENT
+                        </a>
+                        <ul id="dashboard4" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="#Customersm" class="sidebar-link">Customers</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#Sellerm" class="sidebar-link">Seller</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#Employeesection" class="sidebar-link">Employee section</a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard5"
+                            aria-expanded="false" aria-controls="dashboard5">
+                            
+                            SYSTEM SETTINGS
+                        </a>
+                        <ul id="dashboard5" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="#Businesssetup" class="sidebar-link">Business setup</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#Businessinformation" class="sidebar-link">Business information</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#Websitecolor" class="sidebar-link">Website color</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#Sellerpanel" class="sidebar-link">Seller panel</a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                </ul>
+            </div>
+            
+        </aside>
+        <!-- Main Component -->
+        <div class="main">
+            <nav class="navbar navbar-expand px-3 border-bottom">
+                <!-- Button for sidebar toggle -->
+                <button class="btn" type="button" data-bs-theme="">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
+            <main class="content px-3 py-2">
+                <div class="container-fluid">
+                    <div class="mb-3">
+                        <div class=WordSection1>
+
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:36.4pt;
+                            margin-left:.25in;text-indent:0in;line-height:107%'><b><span lang=EN-GB
+                            style='font-size:17.0pt;line-height:107%;color:#FF9900' id="DASHBOARD">● DASHBOARD</span></b></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:16.0pt;
+                            margin-left:-.25pt;line-height:137%'><span style='position:relative;z-index:
+                            -1895825408'><span style='left:0px;position:absolute;left:202px;top:-7px;
+                            width:421px;height:23px'><img width=421 height=23
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image001.png"></span></span><b><span
+                            lang=EN-GB style='font-size:15.0pt;line-height:137%' id="Business">Business Analytics </span></b><span
+                            lang=EN-GB>Admin can see the total sale of products,total stores,total product
+                            and total customer on his website also admin can see </span><span lang=EN-GB
+                            style='font-family:Roboto;color:#1C1E21'>status of the orders.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-10.9pt;margin-bottom:
+                            83.65pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=636 height=285 id="Picture 64"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image002.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:14.35pt;
+                            margin-left:-.25pt;line-height:143%'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:143%' id="Admin">Admin Wallet  </span></b><span lang=EN-GB style='background:
+                            yellow'>Admin </span><span lang=EN-GB>can see the “in house earning, commission
+                            earned,delivery charge earned<b>, </b>total tax collected and pending amount”
+                            in this option.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            1in;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=156 id="Picture 66"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image003.jpg"></span></p> 
+                            
+                           
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:-1.9pt;
+                            margin-left:-.75pt;text-indent:0in;line-height:110%'><b><span lang=EN-GB
+                            style='font-size:15.0pt;line-height:110%' id="">Earning statistics for business
+                            analytics:        </span></b><span lang=EN-GB>Admin can see here “total</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:3.75pt;
+                            margin-left:-.25pt' id="Earning"><span lang=EN-GB>earning of business on weekly ,monthly and
+                            yearly basis” in the option<b>.</b></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            23.85pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=171 id="Picture 197"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image004.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:4.85pt;
+                            margin-left:-.75pt;text-indent:0in'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:112%' id="Top">Top Customers:               </span></b><span lang=EN-GB>Admin
+                            can see the top customer <span style='background:yellow'>on his website.</span></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:4.9pt;
+                            margin-left:-.75pt;text-indent:0in'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:112%' id="Mostpopularstores">Most popular stores:       </span></b><span lang=EN-GB>Admin
+                            can see the most popular store <span style='background:yellow'>on his website.</span></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:14.6pt;
+                            margin-left:-.75pt;text-indent:0in'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:112%' id="Topsellingstore">Top selling store:             </span></b><span lang=EN-GB>Admin
+                            can see the top selling stores <span style='background:yellow'>on his website.</span></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            23.6pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=192 id="Picture 199"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image005.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:19.2pt;
+                            margin-left:-.75pt;text-indent:0in'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:112%' id="Mostpopularproduct">Most popular product:     </span></b><span lang=EN-GB>Admin
+                            can see the most popular products here.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:31.0pt;
+                            margin-left:-.75pt;text-indent:0in'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:112%' id="Topsellingproducts">Top selling products:       </span></b><span lang=EN-GB>Admin
+                            can see the top selling products here.</span></p>
+                            
+                            <h1 style='margin-left:17.75pt' id="pos"><span lang=EN-GB>● POS</span></h1>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:19.0pt;
+                            margin-left:36.5pt'><b><span lang=EN-GB>Product Section: </span></b><span
+                            lang=EN-GB>Here we can see or search “The products” by its Category, choosing
+                            from <b>All Category </b>and search from <b>Search Name.</b></span></p>
+                            
+                            <h1 style='margin-left:36.5pt'><span lang=EN-GB>Billing Section</span></h1>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:1.3in;margin-bottom:0in;
+                            margin-left:.5in;text-indent:0in;line-height:120%'><span lang=EN-GB>We can see
+                            or add <b><i>Walking Customer </i></b>and add <b><i>Customer . </i></b></span><span
+                            lang=EN-GB style='font-size:13.0pt;line-height:120%'>Current Customer: Walking Customer</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:16.95pt;
+                            margin-left:36.5pt'><span lang=EN-GB>We can add WC, Clear Cart, add New Order,
+                            Can also see the <b>Order details- Item, Qty, Price, Delete, </b>Sub Total,
+                            Product Discount,Extra Discount, Coupon Discount.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:100.7pt;
+                            margin-left:36.5pt;line-height:110%'><span lang=EN-GB style='font-size:12.0pt;
+                            line-height:110%'>Paid By : </span><span lang=EN-GB style='font-size:12.0pt;
+                            line-height:110%;color:white;background:#0C343D'>Cash </span><span lang=EN-GB
+                            style='font-size:12.0pt;line-height:110%'>or </span><span lang=EN-GB
+                            style='font-size:12.0pt;line-height:110%;color:white;background:#274E13'>Card </span><span
+                            lang=EN-GB style='font-size:12.0pt;line-height:110%'>and </span><span
+                            lang=EN-GB style='font-size:12.0pt;line-height:110%;color:white;background:
+                            #D5A6BD'>Cancel Order </span><span lang=EN-GB style='font-size:12.0pt;
+                            line-height:110%;color:white;background:#3C78D8'>Place Order</span></p>
+                            
+                            <h1 style='margin-top:0in;margin-right:0in;margin-bottom:35.9pt;margin-left:
+                            .25in;text-indent:0in'><span lang=EN-GB style='color:#FF9900' id="ORDERMANAGEMENT">● ORDER
+                            MANAGEMENT</span></h1>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:5.6pt;
+                            margin-left:-.75pt;text-indent:0in;line-height:107%'><b><span lang=EN-GB
+                            style='font-size:15.0pt;line-height:107%' id="Orders">Orders:           </span></b><span
+                            lang=EN-GB style='font-family:Roboto;color:#1C1E21'>In order list admin will
+                            get all the information of his orders</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+                            margin-left:-.75pt;text-indent:0in;line-height:107%'><b><span lang=EN-GB
+                            style='font-size:15.0pt;line-height:107%;font-family:Roboto;color:#1C1E21' id="All">All
+                            orders:          </span></b><span lang=EN-GB style='font-family:Roboto;
+                            color:#1C1E21'>Admin can see all his orders by Selecting the Date Range .</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            24.8pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=348 id="Picture 348"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image006.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-left:-.75pt;text-indent:0in'><b><span
+                            lang=EN-GB style='font-size:15.0pt;line-height:112%' id="Pending">Pending:          </span></b><span
+                            lang=EN-GB>In the pending option admin can see all his pending orders by select</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:1.4pt;
+                            margin-left:-.25pt'><span lang=EN-GB>“Date Range”. If you want to accept your
+                            order from the pending list then click on the action button of the product
+                            after that you can accept your order from “Order &amp; Shipping Info”. Now
+                            click on the drop down menu to select the “Confirmed” option, now the order has
+                            been accepted and go to the next stage.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:9.6pt;
+                            margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=602 height=190 id="Picture 485"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image007.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-left:-.75pt;text-indent:0in'><b><span
+                            lang=EN-GB style='font-size:15.0pt;line-height:112%' id="Confirmed">Confirmed:               </span></b><span
+                            lang=EN-GB>In the confirmed option, the admin can see all his confirmed</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:3.45pt;
+                            margin-left:-.25pt'><span lang=EN-GB>orders. Once the order has been confirmed,
+                            the order will be sent for the packaging. You can change the status of the
+                            product by clicking on the action button of that order. Now from “Order &amp;
+                            Shipping Info” click on the drop down menu to select the “Packaging” option,
+                            now order will go for the next stage.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            24.15pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=196 id="Picture 487"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image008.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:3.35pt;
+                            margin-left:-.25pt'><b><span lang=EN-GB style='font-size:15.0pt;line-height:
+                            112%' id="Packaging">Packaging:       </span></b><span lang=EN-GB>In this option you can see
+                            all the orders which are ready for packaging. Once the order has been packed it
+                            will go for shipping. Now click on the action button of the order then from
+                            “Order &amp; Shipping Info” click on the drop down menu to select the “Out for
+                            Delivery” option, now the order will go to the next stage.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            0in;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=192 id="Picture 489"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image009.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:2.1pt;
+                            margin-left:-.25pt'><b><span lang=EN-GB style='font-size:15.0pt;line-height:
+                            112%' id="Outofdeliver">Out of delivery:        </span></b><span lang=EN-GB>In this option you
+                            can see all the orders which are ready for delivery. Here you can assign a
+                            delivery man from “</span><span lang=EN-GB style='font-size:10.5pt;line-height:
+                            112%'>Shipping Type or Shipping Method</span><span lang=EN-GB>” and you can
+                            choose the delivery type from the drop down menu “by self delivery man” or
+                            “third party service” also you can update the payment status of the prepaid
+                            order.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            9.7pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=164 id="Picture 653"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image010.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:2.05pt;
+                            margin-left:-.25pt'><b><span lang=EN-GB style='font-size:15.0pt;line-height:
+                            112%' id="Delivered">Delivered: </span></b><span lang=EN-GB>In this option admin can see the
+                            product which is delivered. Once the order has been delivered. The delivery man
+                            will update the status of the product. Then you can change the status of the
+                            order from “Order &amp; Shipping Info” click on the drop down menu to select
+                            the “Delivered” option and update the payment select to paid.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            24.2pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=225 id="Picture 655"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image011.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-left:-.75pt;text-indent:0in'><b><span
+                            lang=EN-GB style='font-size:15.0pt;line-height:112%' id="Returned">Returned:                  </span></b><span
+                            lang=EN-GB>Here the admin can see all the returned orders. Click on the</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:1.4pt;
+                            margin-left:-.25pt'><span lang=EN-GB>returned button after you show the return
+                            product then you can change the status of the return product by an action
+                            button.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            24.0pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=185 id="Picture 737"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image012.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:.2pt;
+                            margin-left:-.25pt;line-height:134%'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:134%' id="FailedtoDeliver">Failed to Deliver:     </span></b><span lang=EN-GB>In the
+                            option admin can see which product has failed to deliver. If the delivery boy
+                            could not deliver the product at the time. Then You will try the order for
+                            delivery again the next day.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            24.25pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=224 id="Picture 739"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image013.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-left:-.75pt;text-indent:0in'><b><span
+                            lang=EN-GB style='font-size:15.0pt;line-height:112%' id="Canceled">Canceled:            </span></b><span
+                            lang=EN-GB>Here the admin can see all his cancel orders. If you want to see a</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:1.4pt;
+                            margin-left:-.25pt'><span lang=EN-GB>canceled order of a seller or inhouse
+                            product, then you can select the seller and date from the &quot;select date
+                            range&quot; option.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            27.2pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=247 id="Picture 875"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image014.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+                            margin-left:-.25pt;line-height:110%'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:110%' id="Refundrequest">Refund request:</span></b></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:1.4pt;
+                            margin-left:-.25pt'><b><span lang=EN-GB id="Pendingreq">Pending:         </span></b><span
+                            lang=EN-GB>In the option admin can see the customer’s refund request. If the
+                            refund request follows ”Refund Policy” you can approve the request. For
+                            approval click on the action button of the cancel order then click on ”Change
+                            refund status” now you can select the “Approved” option. Now this refund order
+                            has been approved.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            6.55pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=129 id="Picture 877"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image015.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:1.4pt;
+                            margin-left:-.25pt'><b><span lang=EN-GB id="Approvedreq">Approved:      </span></b><span
+                            lang=EN-GB>In the option admin can see the approved refund request. If you want
+                            to refund the order, then you will click on the action button. After this,
+                            select the refund option from &quot;Change Refund Status&quot; and select the
+                            payment method. If you want to reject the refund request you can select the
+                            “Rejected” option and give a reason for rejection of the request.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            36.95pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=155 id="Picture 879"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image016.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-left:-.75pt;text-indent:0in'><b><span
+                            lang=EN-GB id="Refundedreq">Refunded:        </span></b><span lang=EN-GB>In the option admin can
+                            see all the refunded orders.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            6.9pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=165 id="Picture 953"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image017.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:3.75pt;
+                            margin-left:-.75pt;text-indent:0in'><b><span lang=EN-GB id="Rejectedreq">Rejected:          </span></b><span
+                            lang=EN-GB>In the option admin can see all the rejected refund orders.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            23.85pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=625 height=108 id="Picture 955"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image018.jpg"></span></p>
+                            
+                            <h1 id="products" style='margin-top:0in;margin-right:0in;margin-bottom:21.85pt;margin-left:
+                            17.75pt'><span lang=EN-GB style='font-size:17.5pt;line-height:107%;color:#FF9900;
+                            font-weight:normal'>● </span><span lang=EN-GB style='font-size:15.5pt;
+                            line-height:107%;color:#FF9900' id="PRODUCTMANAGEMENT">PRODUCT MANAGEMENT</span></h1>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:19.05pt;
+                            margin-left:-.25pt;line-height:110%'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:110%' id="Categorysetup">Category setup:</span></b></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:1.8pt;
+                            margin-left:-.25pt'><b><span lang=EN-GB style='font-size:15.0pt;line-height:
+                            112%' id="Category">Category: </span></b><span lang=EN-GB>In this option, the admin can add
+                            the category of the product. First of all, you will fill in the &quot;category
+                            name&quot;. After this you have to choose &quot;Set Priority&quot;. Now you
+                            have to upload the “Category logo” and click Submit. Now your product will
+                            start showing in the category list.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            0in;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=269 id="Picture 957"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image019.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-left:-.75pt;text-indent:0in'><b><span
+                            lang=EN-GB style='font-size:15.0pt;line-height:112%' id="Subcategory">Sub category:           </span></b><span
+                            lang=EN-GB>In the option admin can add the “Sub Category” of product. He</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:1.4pt;
+                            margin-left:-.25pt'><span lang=EN-GB>can fill in the details of sub categories
+                            like sub category name, priority and logo of sub category and see the sub
+                            category list at the bottom.He can search sub category products from search bar
+                            also..</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            23.95pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=183 id="Picture 1094"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image020.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:3.35pt;
+                            margin-left:-.25pt'><b><span lang=EN-GB style='font-size:15.0pt;line-height:
+                            112%' id="Subsubcategory">Sub sub category:   </span></b><span lang=EN-GB>In the option admin can
+                            add the sub sub category of product. He can fill in the details of sub sub
+                            categories like sub sub category name, sub category name, category name.He can
+                            see the sub sub category list at the bottom.He can search sub sub category
+                            products from search bar also..</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            21.9pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=225 id="Picture 1096"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image021.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:24.4pt;
+                            margin-left:-.25pt;line-height:110%'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:110%' id="Brands">Brands:</span></b></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:.2pt;
+                            margin-left:-.25pt;line-height:144%'><b><u><span lang=EN-GB style='font-size:
+                            15.0pt;line-height:144%' id="Addnew">Add new: </span></u></b><span lang=EN-GB>In the option
+                            admin can add the brand of his product. He can fill in the brand name,brand
+                            logo and submit it here..</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            10.0pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=179 id="Picture 1200"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image022.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:.2pt;
+                            margin-left:-.25pt;line-height:144%'><b><u><span lang=EN-GB style='font-size:
+                            15.0pt;line-height:144%' id="List">List: </span></u></b><span lang=EN-GB>In the option
+                            admin can see the list of all brands and also search from the search bar.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            9.15pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=243 id="Picture 1202"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image023.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-left:-.75pt;text-indent:0in'><b><span
+                            lang=EN-GB style='font-size:15.0pt;line-height:112%' id="ProductAttribute">Product Attribute:            </span></b><span
+                            lang=EN-GB>You can add special features to any product.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            7.4pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=185 id="Picture 1204"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image024.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:24.9pt;
+                            margin-left:-.25pt;line-height:110%'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:110%' id="Inhouseproduct">In house product:</span></b></p>
+                            
+                            <p class=MsoNormal style='margin-left:-.75pt;text-indent:0in'><b><span
+                            lang=EN-GB style='font-size:15.0pt;line-height:112%'>Product:              </span></b><span
+                            lang=EN-GB>In the option admin can add his products. Click on the add new
+                            product</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:3.45pt;
+                            margin-left:-.25pt'><span lang=EN-GB>button after that you will fill the
+                            product name and the details of the product. After that scroll down you will
+                            see general information. Now you will fill product type, category, sub
+                            category, sub sub category, product code, brand, unit. Now you can fill the
+                            color of the product from the variation option.After that you will fill product
+                            price and stocks.You will fill these option are unit price, purchase price, tax
+                            percent, discount, discount type, total quantity, minimum order quantity,
+                            shipping cost, shipping cost multiply with quantity.After that you will fill
+                            product image and thumbnail image then submit.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            38.4pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=195 id="Picture 1288"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image025.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-left:-.75pt;text-indent:0in'><b><span
+                            lang=EN-GB style='font-size:15.0pt;line-height:112%'>Bulk import:              </span></b><span
+                            lang=EN-GB>Admin can import products in bulk.?</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            21.9pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=201 id="Picture 1290"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image026.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:19.05pt;
+                            margin-left:-.25pt;line-height:110%'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:110%' id="Sellerproduct">Seller product:</span></b></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:.2pt;
+                            margin-left:-.25pt;line-height:143%'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:143%'>New products: </span></b><span lang=EN-GB>In the option
+                            sellers can see product details like ,product name, purchase price, selling
+                            price features, active status and action.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            29.1pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=625 height=184 id="Picture 1388"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image027.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:14.45pt;
+                            margin-left:-.25pt;line-height:142%'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:142%'>Approved products: </span></b><span lang=EN-GB>In the option
+                            sellers can see approved product details like product name, purchase price,
+                            selling price features, active status and action.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            23.95pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=625 height=184 id="Picture 1390"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image028.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:.2in;
+                            margin-left:-.25pt;line-height:143%'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:143%'>Denied products:     </span></b><span lang=EN-GB>In the
+                            option sellers can see denied product details like ,product name, purchase
+                            price, selling price features, active status and action.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            53.15pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=83 id="Picture 1392"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image029.jpg"></span></p>
+                            
+                            <h1 style='margin-top:0in;margin-right:0in;margin-bottom:17.45pt;margin-left:
+                            .25in;text-indent:0in'><span lang=EN-GB style='font-size:18.5pt;line-height:
+                            107%;color:#FF9900;font-weight:normal'>● </span><span lang=EN-GB
+                            style='font-size:16.5pt;line-height:107%;color:#FF9900' id="PROMOTIONMANAGEMENT">PROMOTION MANAGEMENT</span></h1>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:2.1pt;
+                            margin-left:-.25pt;line-height:134%'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:134%' id="Banners">Banners:  </span></b><span lang=EN-GB>In the option admin can
+                            choose the main banner,footer banner,popup banner,and main section banner.
+                            Click on add banner then you can see banner form, after that now you will fill
+                            banner url. After clicking the drop down menu from banner type and selecting
+                            main banner, footer banner, popup banner and main section banner then you will
+                            click on resource type and product and choose their option then save the
+                            details.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            7.4pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB
+                            style='font-family:"Calibri",sans-serif'><img width=624 height=424
+                            id="Group 18029" src="Galaxy%20cart%20-%20How%20to%20Use_files/image030.png"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:5.0pt;
+                            margin-left:-.25pt;line-height:110%'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:110%' id="Offers&Deals">Offers &amp; Deals:</span></b></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:3.35pt;
+                            margin-left:-.25pt'><b><span lang=EN-GB style='font-size:15.0pt;line-height:
+                            112%'>Coupons: </span><span lang=EN-GB>: </span></b><span lang=EN-GB id="Coupons">Coupons
+                            pay less money than usual for a product or to get it free. Click on here you
+                            will see all options that help you to generate coupons.You can fill all option
+                            like coupon type,coupon title, coupon code,limit for same user,discount
+                            type,discount amount minimum purchase,start date,expire date.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            0in;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=181 id="Picture 1480"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image031.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:14.3pt;
+                            margin-left:-.25pt;line-height:143%'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:143%' id="FlashDeals">Flash Deals:     </span></b><span lang=EN-GB>Admin can fill
+                            here details like title, start date, end date and logo image and create flash
+                            deals.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            .35in;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=205 id="Picture 1573"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image032.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:.2pt;
+                            margin-left:-.25pt'><b><span lang=EN-GB style='font-size:15.0pt;line-height:
+                            112%'>Deal of the day: </span></b><span lang=EN-GB id="Dealoftheday">Deal of the day means
+                            offering a single product for sale for a day.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:19.6pt;
+                            margin-left:0in;text-indent:0in;line-height:107%'><span lang=EN-GB
+                            style='font-family:Roboto'>Click on here and Admin will see all options that
+                            help you to create a deal of the day.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            54.95pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=245 id="Picture 1575"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image033.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:.2pt;
+                            margin-left:-.25pt;line-height:143%'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:143%'>Featured Deal: </span></b><span lang=EN-GB id="FeaturedDeal">A featured deal
+                            has been given prominence by admin advertising a sale. Click on here and you
+                            will see all options that help you how to create feature deals.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            23.15pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=625 height=209 id="Picture 1617"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image034.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:.2pt;
+                            margin-left:-.25pt;line-height:138%'><b><span lang=EN-GB style='font-size:14.0pt;
+                            line-height:138%' id="Pushnotification">Push notification:       </span></b><span lang=EN-GB>In the
+                            option the admin can push notifications to his customers for any offer product.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            24.0pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=625 height=191 id="Picture 1619"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image035.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:.2pt;
+                            margin-left:-.25pt;line-height:143%'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:143%' id="Announcement">Announcement:       </span></b><span lang=EN-GB>Admin can
+                            make an announcement when he wants to show any discount offer product.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            9.3pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=625 height=223 id="Picture 1621"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image036.jpg"></span></p>
+                            
+                            <h2 style='margin-left:17.75pt'><span lang=EN-GB style='font-size:17.5pt;
+                            line-height:107%' id="HELPSUPPORTSECTION">● </span><span lang=EN-GB>HELP &amp; SUPPORT SECTION</span></h2>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:3.35pt;
+                            margin-left:-.25pt'><b><span lang=EN-GB style='font-size:15.0pt;line-height:
+                            112%' id="Message">Message</span><span lang=EN-GB>:  </span></b><span lang=EN-GB>Admin can
+                            manage here the communication between seller and customer.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            24.0pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=100 id="Picture 1683"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image037.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:.2pt;
+                            margin-left:-.25pt;line-height:143%'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:143%' id="Supportticket">Support ticket: </span><span lang=EN-GB>:</span></b><span
+                            lang=EN-GB>Support ticket is a team to describe an interaction between customer
+                            and support teams.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            23.8pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=151 id="Picture 1685"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image038.jpg"></span></p>
+                            
+                            <h2 style='margin-top:0in;margin-right:0in;margin-bottom:1.35pt;margin-left:
+                            17.75pt'><span lang=EN-GB style='font-size:17.5pt;line-height:107%'>● </span><span
+                            lang=EN-GB id="REPORTS&ANALYSIS">REPORTS &amp; ANALYSIS</span></h2>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:4.65pt;
+                            margin-left:-.25pt;line-height:110%'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:110%' id="Sales&transactionreport">Sales &amp; transaction report:</span></b></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:.2pt;
+                            margin-left:-.25pt;line-height:143%'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:143%' id="">Earning statistics:   </span></b><span lang=EN-GB>Admin can
+                            see yearly and monthly earnings reports date by date like total earning, total
+                            tax, total communication.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            0in;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=265 id="Picture 1687"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image039.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:.2pt;
+                            margin-left:-.25pt;line-height:135%'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:135%'>Inhouse sales: </span></b><span lang=EN-GB>In the option
+                            admin can see all product details of inhouse total sale.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            24.1pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=174 id="Picture 1773"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image040.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:.2pt;
+                            margin-left:-.25pt;line-height:135%'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:135%'>Seller sales: </span></b><span lang=EN-GB>In the option admin
+                            can see the sales of all sellers or one seller.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            23.8pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=143 id="Picture 1775"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image041.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:3.35pt;
+                            margin-left:-.25pt'><b><span lang=EN-GB style='font-size:15.0pt;line-height:
+                            112%'>Order transactions: </span></b><span lang=EN-GB>In the option admin can
+                            see all over order transactions of any customer. first click on the drop down
+                            menu from “select customer” then select your customer after that you will
+                            select start and end month date. Now you can see the order transaction of the
+                            customer.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            6.55pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=213 id="Picture 1777"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image042.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:.2pt;
+                            margin-left:-.25pt'><span lang=EN-GB>.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:.2pt;
+                            margin-left:-.25pt;line-height:134%'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:134%'>Refund transactions:       </span></b><span lang=EN-GB>In the
+                            option admin can see all over refund transactions of any customer. You will
+                            search cutomer order id from search bar. Now you can see the refund transaction
+                            of the customer.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            36.45pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=151 id="Picture 1875"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image043.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:19.05pt;
+                            margin-left:-.25pt;line-height:110%'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:110%' id="Productreport">Product report:</span></b></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:.2pt;
+                            margin-left:-.25pt;line-height:135%'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:135%'>Wishlisted products:       </span></b><span lang=EN-GB>In the
+                            option admin can see the wishlist product of the customer.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            24.05pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=131 id="Picture 1877"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image044.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-left:-.75pt;text-indent:0in'><b><span
+                            lang=EN-GB style='font-size:15.0pt;line-height:112%'>Order Report:           </span></b><span
+                            lang=EN-GB>In the option admin can see the order report overview. He will</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:3.45pt;
+                            margin-left:-.25pt'><span lang=EN-GB>select the start and end date. Now he will
+                            see order reports like delivered, returned, failed to delivered, and packaging.
+                            He will also see the graph of order reports.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            0in;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=179 id="Picture 1879"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image045.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:.2pt;
+                            margin-left:-.25pt;line-height:134%'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:134%'>Stock Report:  </span></b><span lang=EN-GB>In the option
+                            admin can see the stock report of the product. First click on the drop down
+                            menu from “All” and select the seller. Now you will search the product from the
+                            search bar then you can see the stock reports of the product.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            9.25pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=188 id="Picture 2008"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image046.jpg"></span></p>
+                            
+                            <h2 style='margin-left:17.75pt'><span lang=EN-GB style='font-size:17.5pt;
+                            line-height:107%'>● </span><span lang=EN-GB id="USERMANAGEMENT">USER MANAGEMENT</span></h2>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:4.2pt;
+                            margin-left:-.25pt;line-height:110%'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:110%' id="Customersm">Customers</span></b></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:.2pt;
+                            margin-left:-.25pt;line-height:143%'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:143%'>Customer list:  </span></b><span lang=EN-GB>In the option
+                            admin can see all details of customers like customers name,customers contact,
+                            and customers order.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            9.25pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=170 id="Picture 2010"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image047.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:2.0pt;
+                            margin-left:-.25pt'><b><span lang=EN-GB style='font-size:15.0pt;line-height:
+                            112%'>Customer reviews:  </span></b><span lang=EN-GB>In the option admin can
+                            see all customer reviews. First click on the drop down menu from “choose
+                            customer” and select the customer then click on the drop down menu from “choose
+                            product” and select product then set start and end date. Now you can see the
+                            custom review from the list.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            0in;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=207 id="Picture 2012"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image048.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:.2pt;
+                            margin-left:-.25pt;line-height:142%'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:142%'>Customer Wallet:     </span></b><span lang=EN-GB>In the
+                            option admin can see the details of customer’s wallets like debit, credit and
+                            balance.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            9.05pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=201 id="Picture 2090"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image049.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-left:-.75pt;text-indent:0in'><b><span
+                            lang=EN-GB style='font-size:15.0pt;line-height:112%'>Loyalty points:                 </span></b><span
+                            lang=EN-GB>in the option admin can see tha .</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            38.85pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=267 id="Picture 2092"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image050.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:19.65pt;
+                            margin-left:-.75pt;text-indent:0in'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:112%' id="Sellerm">Seller:               </span></b><span lang=EN-GB>Admin can
+                            see the details of the seller form here.</span></p>
+                            
+                            <p class=MsoNormal style='margin-left:-.75pt;text-indent:0in'><b><span
+                            lang=EN-GB style='font-size:15.0pt;line-height:112%'>Add new seller:        </span></b><span
+                            lang=EN-GB>Admin can add a new seller through this option.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:83.9pt;margin-bottom:
+                            1.4pt;margin-left:-.25pt'><span lang=EN-GB>He can add new seller account
+                            details like, phone number, email, password. He can also upload photos,shop
+                            photos, logos,banners in the option.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            9.65pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=137 id="Picture 2161"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image051.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-left:-.75pt;text-indent:0in'><b><span
+                            lang=EN-GB style='font-size:15.0pt;line-height:112%'>Seller list:                 </span></b><span
+                            lang=EN-GB>Admin can see the details and list of sellers in the option.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            24.1pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=170 id="Picture 2163"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image052.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-left:-.75pt;text-indent:0in'><b><span
+                            lang=EN-GB style='font-size:15.0pt;line-height:112%'>Withdraws:                        </span></b><span
+                            lang=EN-GB>The admin can see all the details of seller withdrawals.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            23.9pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=135 id="Picture 2165"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image053.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-left:-.75pt;text-indent:0in'><b><span
+                            lang=EN-GB style='font-size:15.0pt;line-height:112%'>Subscriber list:                 </span></b><span
+                            lang=EN-GB>Admin can see the customer subscriber list here.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            24.1pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=125 id="Picture 2167"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image054.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:32.25pt;margin-bottom:
+                            .2pt;margin-left:-.25pt;line-height:140%'><b><span lang=EN-GB style='font-size:
+                            15.0pt;line-height:140%'>Delivery man:  </span></b><span lang=EN-GB>Admin can
+                            see the details of delivery man and management. </span><b><span lang=EN-GB
+                            style='font-size:15.0pt;line-height:140%'>Add new delivery man:   </span></b><span
+                            lang=EN-GB>Admin can fill details of delivery man like, name,phone,email,ID,
+                            photo in this option.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            21.9pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=165 id="Picture 2240"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image055.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:19.05pt;
+                            margin-left:-.25pt;line-height:110%'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:110%' id="Employeesection">Employee section</span></b></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:.2pt;
+                            margin-left:-.25pt;line-height:142%'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:142%'>Employees role: </span></b><span lang=EN-GB style='font-size:
+                            12.0pt;line-height:142%'>Admin can set up the role of his employees here. </span><span
+                            lang=EN-GB>He can add his employee details like, name, phone,email,
+                            profile,role and password in the option.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            23.5pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=191 id="Picture 2242"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image056.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+                            margin-left:-.75pt;text-indent:0in;line-height:110%'><b><span lang=EN-GB
+                            style='font-size:15.0pt;line-height:110%'>Employees:              </span></b><span
+                            lang=EN-GB>Admin </span><span lang=EN-GB style='font-size:12.0pt;line-height:
+                            110%'>can see the list of his employees.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            23.8pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=149 id="Picture 2244"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image057.jpg"></span></p>
+                            
+                            <h2 style='margin-top:0in;margin-right:0in;margin-bottom:3.35pt;margin-left:
+                            17.75pt'><span lang=EN-GB style='font-size:17.5pt;line-height:107%'>● </span><span
+                            lang=EN-GB id="SYSTEMSETTINGS">SYSTEM SETTINGS</span></h2>
+                            
+                            <p class=MsoNormal style='margin-left:-.75pt;text-indent:0in'><b><span
+                            lang=EN-GB style='font-size:15.0pt;line-height:112%' id="Businesssetup">Business setup:            </span></b><span
+                            lang=EN-GB>Click on business setup you will find many options and you</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:.2pt;
+                            margin-left:-.25pt'><span lang=EN-GB>will fill your company details like
+                            company name, phone, email, company address, latitude, longitude.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            38.25pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=206 id="Picture 2279"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image058.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:.2pt;
+                            margin-left:-.25pt;line-height:142%'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:142%' id="Businessinformation">Business information:     </span></b><span lang=EN-GB>Admin
+                            can choose here currency position, email, opt verification, order verification,
+                            company copyright text.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            9.55pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=216 id="Picture 2281"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image059.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:.2pt;
+                            margin-left:-.25pt;line-height:143%'><b><span lang=EN-GB style='font-size:15.0pt;
+                            line-height:143%' id="Websitecolor">Website color: </span></b><span lang=EN-GB>Admin can choose
+                            primary color,secondary color,website header logo and website footer logo.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            6.55pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=295 id="Picture 2357"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image060.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-left:-.75pt;text-indent:0in'><b><span
+                            lang=EN-GB>Website favicon         : </span></b><span lang=EN-GB>you can change
+                            favicon,loading gif and app logo.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            6.55pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=177 id="Picture 2359"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image061.jpg"></span></p>
+                            
+                            <table class=TableGrid border=0 cellspacing=0 cellpadding=0 width=618
+                             style='width:463.4pt;border-collapse:collapse'>
+                             <tr style='height:12.45pt'>
+                              <td width=177 valign=top style='width:132.45pt;padding:0in 0in 0in 0in;
+                              height:12.45pt'>
+                              <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:107%'><b><span
+                              lang=EN-GB>Seller setting</span></b></p>
+                              </td>
+                              <td width=441 valign=top style='width:331.0pt;padding:0in 0in 0in 0in;
+                              height:12.45pt'>
+                              <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:107%'><b><span
+                              lang=EN-GB>: </span></b><span lang=EN-GB>This is the way to manage accounts
+                              of the seller.</span></p>
+                              </td>
+                             </tr>
+                             <tr style='height:14.55pt'>
+                              <td width=177 valign=top style='width:132.45pt;padding:0in 0in 0in 0in;
+                              height:14.55pt'>
+                              <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:107%'><b><span
+                              lang=EN-GB>Payment method</span></b></p>
+                              </td>
+                              <td width=441 valign=top style='width:331.0pt;padding:0in 0in 0in 0in;
+                              height:14.55pt'>
+                              <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:107%'><b><span
+                              lang=EN-GB>: </span></b><span lang=EN-GB>This option shows how to pay.</span></p>
+                              </td>
+                             </tr>
+                             <tr style='height:14.55pt'>
+                              <td width=177 valign=top style='width:132.45pt;padding:0in 0in 0in 0in;
+                              height:14.55pt'>
+                              <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:107%'><b><span
+                              lang=EN-GB>Sms module</span></b></p>
+                              </td>
+                              <td width=441 valign=top style='width:331.0pt;padding:0in 0in 0in 0in;
+                              height:14.55pt'>
+                              <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+                              margin-left:.1pt;text-indent:0in;line-height:107%'><b><span lang=EN-GB>:</span></b></p>
+                              </td>
+                             </tr>
+                             <tr style='height:29.1pt'>
+                              <td width=177 valign=top style='width:132.45pt;padding:0in 0in 0in 0in;
+                              height:29.1pt'>
+                              <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:107%'><b><span
+                              lang=EN-GB>Shipping</span></b></p>
+                              </td>
+                              <td width=441 valign=top style='width:331.0pt;padding:0in 0in 0in 0in;
+                              height:29.1pt'>
+                              <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+                              margin-left:6.1pt;text-indent:-6.1pt;line-height:107%'><b><span lang=EN-GB>:
+                              Shipping is the physical moving of the good from one point to another.</span></b></p>
+                              </td>
+                             </tr>
+                             <tr style='height:14.55pt'>
+                              <td width=177 valign=top style='width:132.45pt;padding:0in 0in 0in 0in;
+                              height:14.55pt'>
+                              <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:107%'><b><span
+                              lang=EN-GB>Social login</span></b></p>
+                              </td>
+                              <td width=441 valign=top style='width:331.0pt;padding:0in 0in 0in 0in;
+                              height:14.55pt'>
+                              <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:107%'><b><span
+                              lang=EN-GB>: You can attach your site with social media.</span></b></p>
+                              </td>
+                             </tr>
+                             <tr style='height:12.45pt'>
+                              <td width=177 valign=top style='width:132.45pt;padding:0in 0in 0in 0in;
+                              height:12.45pt'>
+                              <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:107%'><b><span
+                              lang=EN-GB>Currencies</span></b></p>
+                              </td>
+                              <td width=441 valign=top style='width:331.0pt;padding:0in 0in 0in 0in;
+                              height:12.45pt'>
+                              <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:107%'><b><span
+                              lang=EN-GB>: sellers can choose their currencies</span></b><span lang=EN-GB>.</span></p>
+                              </td>
+                             </tr>
+                            </table>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:.2pt;
+                            margin-left:36.5pt'><span lang=EN-GB>:</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            0in;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=179 id="Picture 2361"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image062.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:3.75pt;
+                            margin-left:-.75pt;text-indent:0in'><b><span lang=EN-GB>3rd party:                    </span></b><span
+                            lang=EN-GB>In the option admin can see the third parties who help you.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            35.85pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=191 id="Picture 2425"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image063.jpg"></span></p>
+                            
+                            <h3 style='margin-left:-.25pt'><span lang=EN-GB>Page Social media</span></h3>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:1.65pt;
+                            margin-left:-.75pt;text-indent:0in'><b><span lang=EN-GB>Pages:                         </span></b><span
+                            lang=EN-GB>In the option admin can create a page on social media<b>.</b></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:1.65pt;
+                            margin-left:-.75pt;text-indent:0in'><b><span lang=EN-GB>Social media links:    </span></b><span
+                            lang=EN-GB>In the option admin can create a link on social media.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:3.75pt;
+                            margin-left:-.75pt;text-indent:0in'><b><span lang=EN-GB>Gallery:                       </span></b><span
+                            lang=EN-GB>In the option admin can manage all photos in the gallery.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            21.5pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=216 id="Picture 2427"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image064.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:107%'><b><span
+                            lang=EN-GB style='font-size:13.0pt;line-height:107%'>System setup      :</span></b></p>
+                            
+                            <h1 style='margin-top:0in;margin-right:0in;margin-bottom:12.1pt;margin-left:
+                            0in;text-indent:0in'><i><u><span lang=EN-GB style='font-size:20.0pt;line-height:
+                            107%' id="Sellerpanel">Seller panel</span></u></i></h1>
+                            
+                            <h2 style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:-.25pt;
+                            background:#F9F9FB'><span lang=EN-GB style='font-size:15.0pt;line-height:107%;
+                            color:black'>Dashboard</span></h2>
+                            
+                            <table class=TableGrid border=0 cellspacing=0 cellpadding=0 width=618
+                             style='width:463.45pt;border-collapse:collapse'>
+                             <tr style='height:12.45pt'>
+                              <td width=144 valign=top style='width:1.5in;padding:0in 0in 0in 0in;
+                              height:12.45pt'>
+                              <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:107%'><b><span
+                              lang=EN-GB>Pending</span></b></p>
+                              </td>
+                              <td width=474 valign=top style='width:355.45pt;padding:0in 0in 0in 0in;
+                              height:12.45pt'>
+                              <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:107%'><b><span
+                              lang=EN-GB>: Seller can see the pending product in the option.</span></b></p>
+                              </td>
+                             </tr>
+                             <tr style='height:14.55pt'>
+                              <td width=144 valign=top style='width:1.5in;padding:0in 0in 0in 0in;
+                              height:14.55pt'>
+                              <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:107%'><b><span
+                              lang=EN-GB>Confirmed</span></b></p>
+                              </td>
+                              <td width=474 valign=top style='width:355.45pt;padding:0in 0in 0in 0in;
+                              height:14.55pt'>
+                              <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:107%'><b><span
+                              lang=EN-GB>: It shows the product is confirmed.</span></b></p>
+                              </td>
+                             </tr>
+                             <tr style='height:14.55pt'>
+                              <td width=144 valign=top style='width:1.5in;padding:0in 0in 0in 0in;
+                              height:14.55pt'>
+                              <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:107%'><b><span
+                              lang=EN-GB>Packaging</span></b></p>
+                              </td>
+                              <td width=474 valign=top style='width:355.45pt;padding:0in 0in 0in 0in;
+                              height:14.55pt'>
+                              <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:107%'><b><span
+                              lang=EN-GB>: You can see the product has been packed.</span></b></p>
+                              </td>
+                             </tr>
+                             <tr style='height:14.55pt'>
+                              <td width=144 valign=top style='width:1.5in;padding:0in 0in 0in 0in;
+                              height:14.55pt'>
+                              <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:107%'><b><span
+                              lang=EN-GB>Out of delivery</span></b></p>
+                              </td>
+                              <td width=474 valign=top style='width:355.45pt;padding:0in 0in 0in 0in;
+                              height:14.55pt'>
+                              <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:107%'><b><span
+                              lang=EN-GB>: This option shows your product is out of delivery.</span></b></p>
+                              </td>
+                             </tr>
+                             <tr style='height:14.55pt'>
+                              <td width=144 valign=top style='width:1.5in;padding:0in 0in 0in 0in;
+                              height:14.55pt'>
+                              <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:107%'><b><span
+                              lang=EN-GB>Delivered</span></b></p>
+                              </td>
+                              <td width=474 valign=top style='width:355.45pt;padding:0in 0in 0in 0in;
+                              height:14.55pt'>
+                              <p class=MsoNormal style='margin:0in;text-align:justify;text-justify:inter-ideograph;
+                              text-indent:0in;line-height:107%'><b><span lang=EN-GB>: This option indicates
+                              that your product or item has been delivered.</span></b></p>
+                              </td>
+                             </tr>
+                             <tr style='height:14.55pt'>
+                              <td width=144 valign=top style='width:1.5in;padding:0in 0in 0in 0in;
+                              height:14.55pt'>
+                              <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:107%'><b><span
+                              lang=EN-GB>Canceled</span></b></p>
+                              </td>
+                              <td width=474 valign=top style='width:355.45pt;padding:0in 0in 0in 0in;
+                              height:14.55pt'>
+                              <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:107%'><b><span
+                              lang=EN-GB>: This option specifies how many products have been canceled</span></b></p>
+                              </td>
+                             </tr>
+                             <tr style='height:14.55pt'>
+                              <td width=144 valign=top style='width:1.5in;padding:0in 0in 0in 0in;
+                              height:14.55pt'>
+                              <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:107%'><b><span
+                              lang=EN-GB>Returned</span></b></p>
+                              </td>
+                              <td width=474 valign=top style='width:355.45pt;padding:0in 0in 0in 0in;
+                              height:14.55pt'>
+                              <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:107%'><b><span
+                              lang=EN-GB>: This option Specifies which products have been returned.</span></b></p>
+                              </td>
+                             </tr>
+                             <tr style='height:27.0pt'>
+                              <td width=144 valign=top style='width:1.5in;padding:0in 0in 0in 0in;
+                              height:27.0pt'>
+                              <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:1.25pt;
+                              margin-left:0in;text-indent:0in;line-height:107%'><b><span lang=EN-GB>Failed
+                              to delivery</span></b></p>
+                              <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:107%'><b><span
+                              lang=EN-GB>Product</span></b></p>
+                              </td>
+                              <td width=474 valign=top style='width:355.45pt;padding:0in 0in 0in 0in;
+                              height:27.0pt'>
+                              <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:107%'><b><span
+                              lang=EN-GB>: This option specifies which product has failed to deliver</span></b></p>
+                              </td>
+                             </tr>
+                            </table>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            6.55pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=156 id="Picture 2561"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image065.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:.15pt;margin-bottom:1.3pt;
+                            margin-left:-.25pt'><span lang=EN-GB>.</span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:6.65pt;
+                            margin-left:-.75pt;text-indent:0in;line-height:110%'><b><span lang=EN-GB>Seller
+                            Wallet               : seller can see his wallet.</span></b></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            21.1pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=183 id="Picture 2563"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image066.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:18.15pt;margin-bottom:
+                            4.0pt;margin-left:149.35pt;text-indent:-150.1pt;line-height:110%'><b><span
+                            lang=EN-GB>Earning Statistics                   : Seller can see earning
+                            statistics for business analytics on a monthly and yearly basis in the option.</span></b></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            21.1pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=183 id="Picture 2677"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image067.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:4.0pt;
+                            margin-left:-.75pt;text-indent:0in;line-height:110%'><b><span lang=EN-GB>Top
+                            Selling Products            : Seller can see the top selling product.</span></b></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:6.65pt;
+                            margin-left:-.75pt;text-indent:0in;line-height:110%'><b><span lang=EN-GB>Most
+                            Popular Products        : Seller can see the most popular product in the
+                            option.</span></b></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            21.85pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=625 height=257 id="Picture 2679"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image068.jpg"></span></p>
+                            
+                            <h2 style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:-.25pt;
+                            background:#F9F9FB'><span lang=EN-GB style='font-size:15.0pt;line-height:107%;
+                            color:black'>Refund Request List</span></h2>
+                            
+                            <table class=TableGrid border=0 cellspacing=0 cellpadding=0 width=546
+                             style='width:409.75pt;border-collapse:collapse'>
+                             <tr style='height:12.45pt'>
+                              <td width=96 valign=top style='width:1.0in;padding:0in 0in 0in 0in;
+                              height:12.45pt'>
+                              <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:107%'><b><span
+                              lang=EN-GB>Pending</span></b></p>
+                              </td>
+                              <td width=450 valign=top style='width:337.75pt;padding:0in 0in 0in 0in;
+                              height:12.45pt'>
+                              <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:107%'><b><span
+                              lang=EN-GB>: Seller can see the pending product in the option</span></b></p>
+                              </td>
+                             </tr>
+                             <tr style='height:29.1pt'>
+                              <td width=96 valign=top style='width:1.0in;padding:0in 0in 0in 0in;
+                              height:29.1pt'>
+                              <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:107%'><b><span
+                              lang=EN-GB>Approved</span></b></p>
+                              </td>
+                              <td width=450 valign=top style='width:337.75pt;padding:0in 0in 0in 0in;
+                              height:29.1pt'>
+                              <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+                              margin-left:6.75pt;text-align:justify;text-justify:inter-ideograph;
+                              text-indent:-6.75pt;line-height:107%'><b><span lang=EN-GB>:This option shows
+                              approved product details like product name, purchase price, selling price
+                              features, active status and action</span></b></p>
+                              </td>
+                             </tr>
+                             <tr style='height:14.55pt'>
+                              <td width=96 valign=top style='width:1.0in;padding:0in 0in 0in 0in;
+                              height:14.55pt'>
+                              <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:107%'><b><span
+                              lang=EN-GB>Refunded</span></b></p>
+                              </td>
+                              <td width=450 valign=top style='width:337.75pt;padding:0in 0in 0in 0in;
+                              height:14.55pt'>
+                              <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:107%'><b><span
+                              lang=EN-GB>: Seller can see the refunded product in the option.</span></b></p>
+                              </td>
+                             </tr>
+                             <tr style='height:12.45pt'>
+                              <td width=96 valign=top style='width:1.0in;padding:0in 0in 0in 0in;
+                              height:12.45pt'>
+                              <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:107%'><b><span
+                              lang=EN-GB>Rejected</span></b></p>
+                              </td>
+                              <td width=450 valign=top style='width:337.75pt;padding:0in 0in 0in 0in;
+                              height:12.45pt'>
+                              <p class=MsoNormal style='margin:0in;text-align:justify;text-justify:inter-ideograph;
+                              text-indent:0in;line-height:107%'><b><span lang=EN-GB>: This option shows
+                              products which are denied by the customer.</span></b></p>
+                              </td>
+                             </tr>
+                            </table>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:18.15pt;margin-bottom:
+                            16.45pt;margin-left:-.25pt;line-height:110%'><b><span lang=EN-GB>Product
+                            management</span></b></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:1.9pt;
+                            margin-left:-.75pt;text-indent:0in;line-height:110%'><b><span lang=EN-GB>Products         :
+                            seller can add his products to sell in the option.</span></b></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:4.0pt;
+                            margin-left:-.75pt;text-indent:0in;line-height:110%'><b><span lang=EN-GB>Bulk
+                            import    : seller can import his product in bulk in the option.</span></b></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            18.5pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=164 id="Picture 2721"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image069.jpg"></span></p>
+                            
+                            <table class=TableGrid border=0 cellspacing=0 cellpadding=0 width=624
+                             style='width:6.5in;border-collapse:collapse'>
+                             <tr style='height:26.0pt'>
+                              <td width=144 style='width:1.5in;background:#F9F9FB;padding:0in 5.75pt 0in 0in;
+                              height:26.0pt'>
+                              <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+                              margin-left:4.15pt;text-indent:0in;line-height:107%'><b><span lang=EN-GB>Product
+                              Reviews</span></b></p>
+                              </td>
+                              <td width=480 style='width:5.0in;background:#F9F9FB;padding:0in 5.75pt 0in 0in;
+                              height:26.0pt'>
+                              <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:107%'><b><span
+                              lang=EN-GB>: You can review products.</span></b></p>
+                              </td>
+                             </tr>
+                            </table>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            21.3pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=216 id="Picture 2723"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image070.jpg"></span></p>
+                            
+                            <table class=TableGrid border=0 cellspacing=0 cellpadding=0 align=left
+                             width=624 style='width:6.5in;border-collapse:collapse;margin-left:-2.25pt;
+                             margin-right:-2.25pt'>
+                             <tr style='height:21.0pt'>
+                              <td width=103 valign=top style='width:77.35pt;background:#F9F9FB;padding:
+                              2.3pt 5.75pt 0in 0in;height:21.0pt'>
+                              <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:107%'><b><span
+                              lang=EN-GB>Chatting List</span></b></p>
+                              </td>
+                              <td width=521 valign=top style='width:390.65pt;background:#F9F9FB;padding:
+                              2.3pt 5.75pt 0in 0in;height:21.0pt'>
+                              <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+                              margin-left:30.65pt;text-indent:0in;line-height:107%'><b><span lang=EN-GB>:
+                              Seller can see the customer's message in the list.</span></b></p>
+                              </td>
+                             </tr>
+                            </table>
+                            
+                            <h3 style='margin-top:0in;margin-right:0in;margin-bottom:17.65pt;margin-left:
+                            -.25pt'><img width=624 height=173
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image071.jpg" align=left
+                            hspace=12><span lang=EN-GB>Help support section</span></h3>
+                            
+                            <p class=MsoNormal style='margin-top:21.1pt;margin-right:18.15pt;margin-bottom:
+                            16.45pt;margin-left:-.25pt;line-height:110%'><b><span lang=EN-GB>Business section</span></b></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:4.0pt;
+                            margin-left:-.75pt;text-indent:0in;line-height:110%'><b><span lang=EN-GB>Withdraws                  :
+                            You can withdraw money by the option.</span></b></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            21.1pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=220 id="Picture 2755"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image072.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:4.0pt;
+                            margin-left:-.75pt;text-indent:0in;line-height:110%'><b><span lang=EN-GB>My
+                            bank info              : Seller can add his account details in the section.</span></b></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            21.1pt;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=244 id="Picture 2757"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image073.jpg"></span></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:4.0pt;
+                            margin-left:-.75pt;text-indent:0in;line-height:110%'><b><span lang=EN-GB>Shop
+                            info                    : Seller can add his shop details in the section.</span></b></p>
+                            
+                            <p class=MsoNormal style='margin-top:0in;margin-right:-1.9pt;margin-bottom:
+                            0in;margin-left:1.5pt;text-indent:0in;line-height:107%'><span lang=EN-GB><img
+                            width=624 height=255 id="Picture 2759"
+                            src="Galaxy%20cart%20-%20How%20to%20Use_files/image074.jpg"></span></p>
+                            
+                            </div>
+                            
+                            <span lang=EN-GB style='font-size:11.0pt;line-height:112%;font-family:"Arial",sans-serif;
+                            color:black'><br clear=all style='page-break-before:always'>
+                            </span>
+                            
+                            <div class=WordSection2>
+                            
+                            <p class=MsoNormal style='margin:0in;text-indent:0in;line-height:107%'><span
+                            lang=EN-GB>&nbsp;</span></p>
+                            
+                            </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
